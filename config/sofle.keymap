@@ -84,7 +84,7 @@
 
             sensor-bindings =
                 <&inc_dec_kp C_VOLUME_DOWN C_VOLUME_UP>,
-                <&inc_dec_kp PG_UP PAGE_DOWN>;
+                <&inc_dec_kp LC(D) LC(PAGE_DOWN)>;
         };
 
         utils_layer {
