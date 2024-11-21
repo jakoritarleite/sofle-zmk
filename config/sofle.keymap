@@ -24,6 +24,18 @@
 
     combos { compatible = "zmk,combos"; };
 
+    macros {
+        type_that_thing: type_that_thing {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings =
+                <&macro_press>,
+                <&kp LS(A) &kp Q &kp Z &kp POUND &kp LS(H) &kp N3 &kp R &kp J &kp P &kp N &kp W &kp LS(X) &kp N6 &kp M &kp LS(D)>;
+
+            label = "TYPE_THAT_THING";
+        };
+    };
+
     keymap {
         compatible = "zmk,keymap";
 
@@ -52,11 +64,11 @@
 
         symbols_layer {
             bindings = <
-&trans  &trans           &trans         &trans             &trans          &trans                         &trans         &none                 &none                  &trans        &trans  &none
-&trans  &kp EXCLAMATION  &kp AT_SIGN    &kp HASH           &kp DOLLAR      &kp PERCENT                    &kp CARET      &kp LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS  &kp AMPS      &none   &trans
-&trans  &kp TILDE        &kp GRAVE      &kp DOUBLE_QUOTES  &kp MINUS       &kp EQUAL                      &kp BACKSLASH  &kp LEFT_BRACE        &kp RIGHT_BRACE        &kp ASTERISK  &trans  &trans
-&none   &none            &kp LESS_THAN  &kp GREATER_THAN   &kp UNDERSCORE  &kp PLUS     &trans    &trans  &kp PIPE       &kp LEFT_BRACKET      &kp RBKT               &none         &trans  &trans
-                         &none          &trans             &trans          &to 0        &trans    &trans  &trans         &trans                &to 0                  &trans
+&trans            &trans           &trans         &trans             &trans          &trans                         &trans         &none                 &none                  &trans        &trans  &none
+&trans            &kp EXCLAMATION  &kp AT_SIGN    &kp HASH           &kp DOLLAR      &kp PERCENT                    &kp CARET      &kp LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS  &kp AMPS      &none   &trans
+&trans            &kp TILDE        &kp GRAVE      &kp DOUBLE_QUOTES  &kp MINUS       &kp EQUAL                      &kp BACKSLASH  &kp LEFT_BRACE        &kp RIGHT_BRACE        &kp ASTERISK  &trans  &trans
+&type_that_thing  &none            &kp LESS_THAN  &kp GREATER_THAN   &kp UNDERSCORE  &kp PLUS     &trans    &trans  &kp PIPE       &kp LEFT_BRACKET      &kp RBKT               &none         &trans  &trans
+                                   &none          &trans             &trans          &to 0        &trans    &trans  &trans         &trans                &to 0                  &trans
             >;
         };
 
