@@ -29,7 +29,7 @@
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             bindings =
-                <&macro_press>,
+                <&macro_tap>,
                 <&kp LS(A) &kp Q &kp Z &kp POUND &kp LS(H) &kp N3 &kp R &kp J &kp P &kp N &kp W &kp LS(X) &kp N6 &kp M &kp LS(D)>;
 
             label = "TYPE_THAT_THING";
