@@ -127,7 +127,7 @@
 &trans     &kp Q   &kp W     &kp E     &kp R      &kp T                          &kp Y   &kp U     &kp I      &kp O    &kp P     &kp BSPC
 &kp LSHFT  &kp A   &kp S     &kp D     &kp F      &kp G                          &kp H   &kp J     &kp K      &kp L    &kp SEMI  &trans
 &trans     &kp Z   &kp X     &kp C     &kp V      &kp B      &trans     &trans   &kp N   &kp M     &kp COMMA  &kp DOT  &kp FSLH  &kp LALT
-                   &kp LALT  &kp LGUI  &kp LCTRL  &kp SPACE  &kp ESC    &kp RET  &trans  &kp BSPC  &kp DEL    &to 0
+                   &kp LALT  &kp LGUI  &kp LCTRL  &kp SPACE  &kp ESC    &kp RET  &mo 3   &kp BSPC  &kp DEL    &to 0
             >;
 
             label = "gamming";
