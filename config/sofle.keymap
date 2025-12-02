@@ -55,7 +55,7 @@
 &kp TAB           &kp Q   &kp W         &kp E         &kp R             &kp T                                 &kp Y   &kp U          &kp I            &kp O    &kp P                     &kp DELETE
 &kp LEFT_SHIFT    &kp A   &kp S         &kp D         &kp F             &kp G                                 &kp H   &kp J          &kp K            &kp L    &mt UNDERSCORE SEMICOLON  &kp SQT
 &kp LEFT_CONTROL  &kp Z   &kp X         &kp C         &kp V             &kp B        &kp C_MUTE    &kp F15    &kp N   &kp M          &mt MINUS COMMA  &kp DOT  &kp SLASH                 &kp LEFT_ALT
-                          &kp LEFT_ALT  &kp LEFT_GUI  &kp LEFT_CONTROL  &lt 1 SPACE  &kp ESC       &kp ENTER  &mo 3   &kp BACKSPACE  &kp DELETE       &to 2
+                          &kp LEFT_ALT  &kp LEFT_GUI  &kp LEFT_CONTROL  &lt 1 SPACE  &kp ESC       &kp ENTER  &mo 3   &kp BACKSPACE  &kp DELETE       &to 4
             >;
 
             sensor-bindings =
@@ -73,6 +73,42 @@
             >;
 
             label = "symbols";
+        };
+
+        gamming_layer {
+            bindings = <
+&trans     &kp N1  &kp N2    &kp N3    &kp N4     &kp N5                         &kp N6  &kp N7    &kp N8     &kp N9   &kp N0    &trans
+&trans     &kp Q   &kp W     &kp E     &kp R      &kp T                          &kp Y   &kp U     &kp I      &kp O    &kp P     &kp BSPC
+&kp LSHFT  &kp A   &kp S     &kp D     &kp F      &kp G                          &kp H   &kp J     &kp K      &kp L    &kp SEMI  &trans
+&trans     &kp Z   &kp X     &kp C     &kp V      &kp B      &trans     &trans   &kp N   &kp M     &kp COMMA  &kp DOT  &kp FSLH  &kp LALT
+                   &kp LALT  &kp LGUI  &kp LCTRL  &kp SPACE  &kp ESC    &kp RET  &mo 3   &kp BSPC  &kp DEL    &to 0
+            >;
+
+            label = "gamming";
+        };
+
+        utils_layer {
+            display-name = "utils";
+
+            // TODO: Some binds are waiting for shifted keycode support.
+            // ------------------------------------------------------------------------------------------------------------
+            // |       |  F1 |  F2 |  F3  |  F4  |  F5  |                   |  F6  |  F7   |  F8   |  F9  |  F10  |  F11  |
+            // |   `   |  1  |  2  |  3   |  4   |  5   |                   |  6   |  7    |  8    |  9   |   0   |  F12  |
+            // |       |  !  |  @  |  #   |  $   |  %   |                   |  ^   |  &    |  *    |  (   |   )   |   |   |
+            // |       |  =  |  -  |  +   |  {   |  }   |        |  |       |  [   |  ]    |  ;    |  :   |   \   |       |
+            //               |     |      |      |      |        |  |       |      |       |       |      |
+
+            bindings = <
+&kp F11  &kp F1  &kp F2  &kp F3  &kp F4  &kp F5                    &kp F6          &kp F7          &kp F8        &kp F9           &kp F10  &kp F12
+&trans   &none   &none   &none   &none   &none                     &kp HOME        &kp END         &none         &none            &none    &none
+&trans   &none   &none   &none   &none   &none                     &kp LEFT_ARROW  &kp DOWN_ARROW  &kp UP_ARROW  &kp RIGHT_ARROW  &trans   &trans
+&trans   &none   &none   &none   &none   &none   &trans    &trans  &kp HOME        &kp END         &none         &trans           &trans   &trans
+                 &none   &trans  &trans  &to 0   &none     &none   &none           &trans          &trans        &to 2
+            >;
+
+            sensor-bindings =
+                <&inc_dec_kp C_VOLUME_DOWN C_VOLUME_UP>,
+                <&inc_dec_kp F13 F14>;
         };
 
         bluetooth_layer {
@@ -95,42 +131,6 @@
             sensor-bindings =
                 <&inc_dec_kp C_VOLUME_DOWN C_VOLUME_UP>,
                 <&inc_dec_kp F13 F14>;
-        };
-
-        utils_layer {
-            display-name = "utils";
-
-            // TODO: Some binds are waiting for shifted keycode support.
-            // ------------------------------------------------------------------------------------------------------------
-            // |       |  F1 |  F2 |  F3  |  F4  |  F5  |                   |  F6  |  F7   |  F8   |  F9  |  F10  |  F11  |
-            // |   `   |  1  |  2  |  3   |  4   |  5   |                   |  6   |  7    |  8    |  9   |   0   |  F12  |
-            // |       |  !  |  @  |  #   |  $   |  %   |                   |  ^   |  &    |  *    |  (   |   )   |   |   |
-            // |       |  =  |  -  |  +   |  {   |  }   |        |  |       |  [   |  ]    |  ;    |  :   |   \   |       |
-            //               |     |      |      |      |        |  |       |      |       |       |      |
-
-            bindings = <
-&kp F11  &kp F1  &kp F2  &kp F3  &kp F4  &kp F5                    &kp F6          &kp F7          &kp F8        &kp F9           &kp F10  &kp F12
-&trans   &none   &none   &none   &none   &none                     &kp HOME        &kp END         &none         &none            &none    &none
-&trans   &none   &none   &none   &none   &none                     &kp LEFT_ARROW  &kp DOWN_ARROW  &kp UP_ARROW  &kp RIGHT_ARROW  &trans   &trans
-&trans   &none   &none   &none   &none   &none   &trans    &trans  &kp HOME        &kp END         &none         &trans           &trans   &trans
-                 &none   &trans  &trans  &to 0   &none     &none   &none           &trans          &trans        &to 4
-            >;
-
-            sensor-bindings =
-                <&inc_dec_kp C_VOLUME_DOWN C_VOLUME_UP>,
-                <&inc_dec_kp F13 F14>;
-        };
-
-        gamming_layer {
-            bindings = <
-&trans     &kp N1  &kp N2    &kp N3    &kp N4     &kp N5                         &kp N6  &kp N7    &kp N8     &kp N9   &kp N0    &trans
-&trans     &kp Q   &kp W     &kp E     &kp R      &kp T                          &kp Y   &kp U     &kp I      &kp O    &kp P     &kp BSPC
-&kp LSHFT  &kp A   &kp S     &kp D     &kp F      &kp G                          &kp H   &kp J     &kp K      &kp L    &kp SEMI  &trans
-&trans     &kp Z   &kp X     &kp C     &kp V      &kp B      &trans     &trans   &kp N   &kp M     &kp COMMA  &kp DOT  &kp FSLH  &kp LALT
-                   &kp LALT  &kp LGUI  &kp LCTRL  &kp SPACE  &kp ESC    &kp RET  &mo 3   &kp BSPC  &kp DEL    &to 0
-            >;
-
-            label = "gamming";
         };
     };
 };
